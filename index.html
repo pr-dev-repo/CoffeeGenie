@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <meta name="theme-color" content="#111827" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Geenie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 p-4">
+
+    <div class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-lg space-y-4">
+        <h1 class="text-2xl font-bold text-center">☕ Brew Calculator</h1>
+
+        <!-- Brew Method -->
+        <div>
+            <label class="font-semibold">Brew Method</label>
+            <select id="brewMethod" class="w-full mt-1 p-2 border rounded">
+                <option value="espresso">Espresso</option>
+                <option value="pour_over">Pour Over</option>
+                <option value="moka_pot">Moka Pot</option>
+            </select>
+            <div class="mt-2 text-sm text-gray-600 italic" id="grindTip"></div>
+
+        </div>
+
+        <!-- Strength -->
+        <div>
+            <label class="font-semibold">Strength</label>
+            <select id="strengthLevel" class="w-full mt-1 p-2 border rounded">
+                <option value="light">Light</option>
+                <option value="medium" selected>Medium</option>
+                <option value="strong">Strong</option>
+            </select>
+        </div>
+
+        <!-- Dose -->
+        <div>
+            <label class="font-semibold">Dose (grams)</label>
+            <input id="doseSlider" type="range" min="10" max="25" value="18" class="w-full">
+            <div id="doseValue" class="text-center mt-1">18g</div>
+        </div>
+
+        <!-- Results -->
+        <div class="mt-4">
+            <h2 class="text-lg font-semibold mb-2">Results:</h2>
+            <ul class="space-y-1">
+                <li><strong>Water Temp:</strong> <span id="tempOutput"></span></li>
+                <li><strong>Water:</strong> <span id="waterOutput"></span></li>
+                <li><strong>Brew Ratio:</strong> <span id="ratioOutput"></span></li>
+                <li><strong>Time:</strong> <span id="timeOutput"></span></li>
+
+            </ul>
+        </div>
+
+        <!-- Timer -->
+        <div class="text-center mt-4 space-y-2">
+            <button id="startTimer" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Start
+                Timer</button>
+            <button id="resetTimer" class="ml-2 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Reset
+                Timer</button>
+            <div id="timerDisplay" class="mt-2 text-xl font-bold"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
